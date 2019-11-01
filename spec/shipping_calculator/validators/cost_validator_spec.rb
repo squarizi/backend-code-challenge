@@ -28,7 +28,7 @@ RSpec.describe CostValidator, type: :validator do
 
     context 'when length must be within 1 - 60' do
       size_message = ['length must be within 1 - 60']
-      string_value_error = 'This is a big string with more than sixty characteres to get an error in Distance Validator'
+      string_value_error = 'This is a big string with more than sixty characteres to get an error in Cost Validator'
 
       include_examples 'cost validator', string_value_error, string_value_error, 30, false, {origin: size_message, destination: size_message}
     end
