@@ -10,8 +10,9 @@ RSpec.describe DistanceRepository, type: :repository do
     end
 
     context 'when distance does not exist' do
-      let(:origin) { "A #{Time.now}" }
-      let(:destination) { "B #{Time.now}" }
+      let(:time) { Time.now.to_i % 6_000 }
+      let(:origin) { "A #{time}" }
+      let(:destination) { "B #{time}" }
       let(:kilometers) { rand(1..10000) }
       let(:distance) { repository.create(origin: origin, destination: destination, kilometers: kilometers) }
 
