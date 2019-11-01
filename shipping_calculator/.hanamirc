@@ -1,0 +1,3 @@
+project=shipping_calculator
+test=rspec
+template=erb
