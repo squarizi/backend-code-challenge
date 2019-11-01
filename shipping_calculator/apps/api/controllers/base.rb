@@ -3,6 +3,10 @@ module Api
     class Base
       protected
 
+      def repository
+        @repository ||= DistanceRepository.new
+      end
+
       def content(status_code, message)
         status status_code, { message: message }.to_json
       end
