@@ -9,6 +9,9 @@ module Api
         def call(params)
           return validate_error unless validator.success?
           return parameters_error unless origin_or_destination_exist?
+
+          cost = calculate_cost
+          status 200, "#{cost}"
         end
 
         private
@@ -27,6 +30,12 @@ module Api
 
         def parameters_error
           error('origin or destination does not exists')
+        end
+
+        def calculate_cost
+          CostService.calculate(@origin, @destination, @weight)
+        rescue Exception => e
+          error(e.inspect)
         end
       end
     end
