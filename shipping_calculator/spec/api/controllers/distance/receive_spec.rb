@@ -11,7 +11,7 @@ RSpec.describe Api::Controllers::Distance::Receive do
     it do
       post '/distance', params
 
-      expect(last_response.status).to be(422)
+      expect(last_response.status).to be(400)
       expect(last_response.body).to eq error
     end
   end
