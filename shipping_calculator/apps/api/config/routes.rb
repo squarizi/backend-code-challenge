@@ -4,3 +4,5 @@
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
 post '/distance', to: 'distance#receive'
+
+get '/cost', to: 'cost#calculate'
