@@ -22,10 +22,6 @@ module Api
           @validator ||= DistanceValidator.new(origin: @origin, destination: @destination, kilometers: @kilometers.to_i).validate
         end
 
-        def repository
-          @repository ||= DistanceRepository.new
-        end
-
         def find_distance
           @distance_id ||= repository.find_id_by_origin_and_destination(@origin, @destination)
         end
